@@ -1,0 +1,46 @@
+{
+  "name": "mcxue-ui",
+  "private": false,
+  "version": "0.0.1",
+  "type": "module",
+  "files": [
+    "dist/*"
+  ],
+  "main": "./dist/mcxue-ui.umd.cjs",
+  "module": "./dist/mcxue-ui.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/mcxue-ui.es.js",
+      "require": "./dist/mcxue-ui.umd.cjs"
+    }
+  },
+  "keywords": [
+    "react",
+    "typescript",
+    "vite",
+    "react-ui",
+    "mcxue-ui"
+  ],
+  "author": "mcxue <machaoxue@yeah.net> (https://github.com/mcxue)",
+  "license": "MIT",
+  "homepage": "https://github.com/mcxue/mcxue-ui",
+  "scripts": {
+    "dev": "vite",
+    "start": "yarn dev",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.27",
+    "@types/react-dom": "^18.0.10",
+    "@vitejs/plugin-react": "^3.1.0",
+    "classnames": "^2.3.2",
+    "highlight.js": "^11.7.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.9.0",
+    "sass": "^1.58.3",
+    "typescript": "^4.9.3",
+    "vite": "^4.1.0"
+  }
+}

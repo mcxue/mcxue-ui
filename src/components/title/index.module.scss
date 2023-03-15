@@ -1,0 +1,17 @@
+.title {
+  padding: 10px 0;
+  font: var(--mcxueFontH4);
+  line-height: 38px;
+  .caption {
+    margin-left: 12px;
+  }
+}
+.description {
+  color: var(--mcxueColorDark);
+  font: var(--mcxueFontBody);
+  padding: 10px 0 5px;
+}
+.subTitle {
+  font: var(--mcxueFontH5);
+  padding: 5px 0;
+}

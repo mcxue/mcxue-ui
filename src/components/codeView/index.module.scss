@@ -1,0 +1,16 @@
+.codeView {
+  padding: 10px 0;
+  .buttonWrapper {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .pureCode {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 10px;
+    code{
+      padding: 1em;
+    }
+  }
+}

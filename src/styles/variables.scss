@@ -1,0 +1,105 @@
+
+:root {
+  // color 颜色
+  --mcxueColorDark: rgba(0, 0, 0, 0.87);
+  --mcxueColorGrey90pct: #3E4345;
+  --mcxueColorGrey80pct: #5E6366;
+  --mcxueColorGrey60pct: #919699;
+  --mcxueColorGrey40pct: #C6CACC;
+  --mcxueColorGrey30pct: #E3E5E5;
+  --mcxueColorGrey20pct: #F1F3F4;
+  --mcxueColorGrey10pct: #F7F9FA;
+  --mcxueColorRed: #FA5D50;
+  --mcxueColorGreen: #2FA84F;
+  --mcxueColorBlue: #367BF5;
+  --mcxueColorYellow: #F3AA18;
+  --mcxueColorTeal: #069697;
+  --mcxueColorSmoothYellow: #FCF3D7;
+  --mcxueColorSmoothGreen: #DCF7E3;
+  --mcxueColorSmoothRed: #FEE4E2;
+  --mcxueColorSmoothBlue: #E6EFFF;
+  --mcxueColorSmoothTeal: #DAF5F2;
+  // shadow 阴影
+  --mcxueShadowDark2dp: 0px 2px 6px rgba(54, 123, 245, 0.24), 0px 1px 2px rgba(54, 123, 245, 0.24);
+  --mcxueShadowDark4dp: 0px 4px 8px rgba(8, 35, 48, 0.16), 0px 2px 4px rgba(8, 35, 48, 0.24);
+  --mcxueShadowDark8dp: 0px 8px 16px rgba(8, 35, 48, 0.1), 0px 4px 8px rgba(8, 35, 48, 0.16);
+  --mcxueShadowDark16dp: 0px 16px 24px rgba(8, 35, 48, 0.08), 0px 6px 12px rgba(8, 35, 48, 0.14);
+  --mcxueShadowBlue2dp: 0px 2px 6px rgba(54, 123, 245, 0.24), 0px 1px 2px rgba(54, 123, 245, 0.24);
+  --mcxueShadowBlue4dp: 0px 4px 8px rgba(54, 123, 245, 0.16), 0px 2px 4px rgba(54, 123, 245, 0.24);
+  --mcxueShadowBlue8dp: 0px 8px 16px rgba(54, 123, 245, 0.1), 0px 4px 8px rgba(54, 123, 245, 0.16);
+  --mcxueShadowBlue16dp: 0px 16px 24px rgba(54, 123, 245, 0.16), 0px 6px 12px rgba(54, 123, 245, 0.16);
+  --mcxueShadowGreen2dp: 0px 2px 6px rgba(31, 128, 57, 0.24), 0px 1px 2px rgba(31, 128, 57, 0.24);
+  --mcxueShadowGreen4dp: 0px 4px 8px rgba(47, 168, 79, 0.16), 0px 2px 4px rgba(47, 168, 79, 0.24);
+  --mcxueShadowGreen8dp: 0px 8px 16px rgba(47, 168, 79, 0.1), 0px 4px 8px rgba(47, 168, 79, 0.16);
+  --mcxueShadowGreen16dp: 0px 16px 24px rgba(47, 168, 79, 0.16), 0px 6px 12px rgba(47, 168, 79, 0.16);
+  --mcxueShadowYellow2dp: 0px 2px 6px rgba(208, 147, 24, 0.24), 0px 1px 2px rgba(208, 147, 24, 0.24);
+  --mcxueShadowYellow4dp: 0px 4px 8px rgba(243, 170, 24, 0.16), 0px 2px 4px rgba(243, 170, 24, 0.24);
+  --mcxueShadowYellow8dp: 0px 8px 16px rgba(243, 170, 24, 0.1), 0px 4px 8px rgba(243, 170, 24, 0.16);
+  --mcxueShadowYellow16dp: 0px 16px 24px rgba(243, 170, 24, 0.16), 0px 6px 12px rgba(243, 170, 24, 0.16);
+  --mcxueShadowRed2dp: 0px 2px 6px rgba(234, 61, 47, 0.16), 0px 1px 2px rgba(234, 61, 47, 0.24);
+  --mcxueShadowRed4dp: 0px 4px 8px rgba(234, 61, 47, 0.16), 0px 2px 4px rgba(234, 61, 47, 0.24);
+  --mcxueShadowRed8dp: 0px 8px 16px rgba(234, 61, 47, 0.1), 0px 4px 8px rgba(234, 61, 47, 0.16);
+  --mcxueShadowRed16dp: 0px 16px 24px rgba(234, 61, 47, 0.16), 0px 6px 12px rgba(234, 61, 47, 0.16);
+  // gradients 渐变
+  --mcxueGradientSmooth1: linear-gradient(90deg, rgba(155, 170, 250, 1) 0%, rgba(54, 123, 245, 1) 100%);
+  --mcxueGradientSmooth2: linear-gradient(90deg, rgba(209,253,255,1) 0%, rgba(255,236,188,1) 100%);
+  --mcxueGradientSmooth3: linear-gradient(90deg, rgba(119,167,188,1) 0%, rgba(29, 137, 137, 1) 100%);
+  --mcxueGradientSmooth4: linear-gradient(90deg, rgba(243, 231, 233, 1) 0%, rgba(227, 238, 255, 1) 100%);
+  --mcxueGradientSmooth5: linear-gradient(90deg, rgba(128,104,142,1) 0%, rgba(79, 88, 106, 1) 100%);
+  --mcxueGradientSmooth1Light: linear-gradient(90deg, rgba(155, 170, 250, 0.16) 0%, rgba(54, 123, 245, 0.16) 100%);
+  --mcxueGradientNegative1: linear-gradient(90deg,rgba(244, 151, 123, 1) 0%, rgba(249, 86, 126, 1) 100%);
+  --mcxueGradientNegative2: linear-gradient(90deg, rgba(240, 147, 251, 1) 0%, rgba(245, 87, 108, 1) 100%);
+  --mcxueGradientPositive1: linear-gradient(90deg, rgba(87, 203, 175, 1) 0%, rgba(47, 168, 79, 1) 100%);
+  --mcxueGradientPosition2: linear-gradient(90deg, rgba(207, 243, 125, 1) 0%, rgba(125, 232, 140, 1) 100%);
+  --mcxueGradientWarning1: linear-gradient(90deg, rgba(249, 212, 163, 1) 0%, rgba(252, 182, 159, 1) 100%);
+  --mcxueGradientWarning2: linear-gradient(90deg, rgba(246, 211, 101, 1) 0%, rgba(253, 160, 133, 1) 100%);
+  // typography 字体
+  --mcxueFontH1: 900 96px 'Helvetica Neue';
+  --mcxueFontH2: 700 60px 'Helvetica Neue';
+  --mcxueFontH3: 400 48px 'Helvetica Neue';
+  --mcxueFontH4: 400 34px 'Helvetica Neue';
+  --mcxueFontH5: 400 24px 'Helvetica Neue';
+  --mcxueFontH6: 400 20px 'Helvetica Neue';
+  --mcxueFontBody: 400 16px 'Helvetica Neue';
+  --mcxueFontBody2: 400 14px 'Helvetica Neue';
+  --mcxueFontSubtitle: 700 14px 'Helvetica Neue';
+  --mcxueFontButton: 400 14px 'Helvetica Neue';
+  --mcxueFontCaption: 400 12px 'Helvetica Neue';
+  --mcxueFontoverline: 400 10px 'Helvetica Neue';
+}
+// button
+$primaryColor: #367BF5; // 主色
+$linkColor: #1890FF; // 链接色
+$successColor: #1AAD19; // 成功色，微信绿
+$warningColor: #FF5000; // 警告色，淘宝橙
+$errorColor: #F5222D; // 错误色
+$infoColor: #909399; //信息色
+$textColor: #rgba (0, 0, 0, 0.65); // 文本色
+$titleTitleColor: rgba(0, 0, 0, 0.8); // 标题色
+$textColorSecondary: rgba(0, 0, 0, 0.45); // 次文本色
+$TextDisabledColor: rgba(0, 0, 0, 0.25); // 失效色
+// 间距
+$paddingBase: 1rem;
+$paddingLg: 1.5rem;
+$paddingSm: 0.8rem;
+$paddingSx: 0.4rem;
+$paddingXss: 0.2rem;
+// Button 按钮
+// 布局
+$menuHeight: 65px;
+// tabs
+$emptyColor: #FFF;
+$tabsNavPaddingY: 0.5rem;
+$tabsNavPaddingX: 1rem;
+$tabsNavDisabledColor: #6c757d;
+$tabsBorderColor: #dee2e6;
+$tabsBorderWidth: 1px;
+$tabsBorderRadius: 0.25rem;
+$tabsNavHoverBorder-color: #e9ecef #e9ecef #dee2e6;
+$tabsNavHoverColor: $primaryColor;
+$tabsNavActiveColor: $primaryColor;
+$tabsNavActiveBg: $emptyColor;
+$tabsNavActiveBorderColor: #dee2e6 #dee2e6 $emptyColor;
+$tabsContentMargin: 1rem;
+
+

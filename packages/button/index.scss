@@ -1,0 +1,117 @@
+@keyframes iconLoading {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.mcxueButton {
+  background: #FFFFFF;
+  border-radius: 4px;
+  padding: 4px 10px;
+  outline: none;
+  user-select: none;
+  color: var(--mcxueColorBlue);
+  border: 1px solid transparent;
+  cursor: pointer;
+  box-shadow: var(--mcxueShadowBlue2dp);
+  font: var(--mcxueFontButton);
+  // 预置类型的按钮
+  &.mcxuePlain {
+    color: var(--mcxueColorGrey80pct);
+    border-color: var(--mcxueColorGrey40pct);
+    box-shadow: none;
+    &:hover {
+      color: var(--mcxueColorBlue);
+      border-color: var(--mcxueColorBlue);
+    }
+  }
+  &.mcxueSuccess {
+    color: #FFF;
+    background-color: var(--mcxueColorGreen);
+  }
+  &.mcxueWarning {
+    color: #FFF;
+    background-color: var(--mcxueColorYellow);
+  }
+  &.mcxueFail {
+    color: #FFF;
+    background-color: var(--mcxueColorRed);
+  }
+  &.mcxueInfo {
+    color: #FFF;
+    background: var(--mcxueColorGrey60pct);
+  }
+  &.mcxueLink {
+    box-shadow: none;
+  }
+  &.mcxueText {
+    box-shadow: none;
+    border-color: transparent;
+    color: var(--mcxueColorGrey80pct);
+    &:hover {
+      color: var(--mcxueColorBlue);
+    }
+  }
+  // 背景色调节
+  &.mcxueSmooth {
+    background: var(--mcxueGradientSmooth1Light);
+    box-shadow: none;
+  }
+  &.mcxueFilled {
+    background-color: var(--mcxueColorBlue);
+    color: #FFF;
+    box-shadow: none;
+  }
+  &.mcxueGhost {
+    text-shadow: var(--mcxueShadowBlue8dp);
+    border-color: var(--mcxueColorBlue);
+    box-shadow: none;
+  }
+  // 形状
+  &.mcxueRound {
+    border-radius: 50px; // 值越大出 bug 的概率越小，当盒子的宽度很大时，样子会变形
+  }
+  &.mcxueLarge {
+    font-size: 16px;
+    padding: 8px 15px;
+    border-radius: 8px;
+  }
+  &.mcxueSmall {
+    font-size: 12px;
+    padding: 2px 6px;
+  }
+  &.mcxueBold {
+    font-weight: bold;
+  }
+  &:not(.mcxueDisabled):hover {
+    opacity: 0.75;
+  }
+  &:not(.mcxueDisabled):active {
+    opacity: 1;
+  }
+  &.mcxueLoading {
+    opacity: 0.75;
+  }
+  &.mcxueDisabled {
+    cursor: no-drop;
+    box-shadow: none;
+    color: var(--mcxueColorGrey40pct);
+    border-color: var(--mcxueColorGrey40pct);
+    text-shadow: none;
+    background: var(--mcxueColorGrey10pct);
+  }
+  .mcxueSpinning {
+    animation: iconLoading 1.5s linear infinite;
+  }
+}

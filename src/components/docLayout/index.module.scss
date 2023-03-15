@@ -1,0 +1,5 @@
+.docLayout {
+  display: grid;
+  height: calc(100vh - 65px);
+  grid-template: 1fr / 300px 1fr;
+}
