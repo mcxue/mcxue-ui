@@ -1,5 +1,31 @@
 .menu {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+  .logoWrapper {
+    width: 266px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 66px;
+    .logo {
+      font-size: 48px;
+    }
+    .text {
+      margin-left: 12px;
+      font-size: 30px;
+      color: rgba(0, 0, 0, 0.87);
+    }
+  }
+  .externalLinks {
+    width: 266px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 10px;
+    .button {
+      font-size: 40px;
+      color: var(--mcxueColorDark);
+    }
+  }
 }

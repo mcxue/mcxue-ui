@@ -1,0 +1,35 @@
+.mcxueMessageContainer {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1300;
+  .mcxueMessage {
+    background: #FFF;
+    padding: 6px 12px;
+    border-radius: 2px;
+    color: var(--mcxueColorDark);
+    box-shadow: var(--mcxueShadowDark2dp);
+    margin-top: 16px;
+    font-size: 14px;
+    .mcxueIcon {
+      margin-right: 8px;
+      color: var(--mcxueColorDark);
+    }
+    &.mcxueSuccess {
+      .mcxueIcon {
+        color: var(--mcxueColorGreen);
+      }
+    }
+    &.mcxueFail {
+      .mcxueIcon {
+        color: var(--mcxueColorRed);
+      }
+    }
+    &.mcxueWarning {
+      .mcxueIcon {
+        color: var(--mcxueColorRed);
+      }
+    }
+  }
+}

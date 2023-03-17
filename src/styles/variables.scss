@@ -1,7 +1,6 @@
-
 :root {
   // color 颜色
-  --mcxueColorDark: rgba(0, 0, 0, 0.87);
+  --mcxueColorDark: rgba(0, 0, 0, 0.8);
   --mcxueColorGrey90pct: #3E4345;
   --mcxueColorGrey80pct: #5E6366;
   --mcxueColorGrey60pct: #919699;
@@ -20,7 +19,7 @@
   --mcxueColorSmoothBlue: #E6EFFF;
   --mcxueColorSmoothTeal: #DAF5F2;
   // shadow 阴影
-  --mcxueShadowDark2dp: 0px 2px 6px rgba(54, 123, 245, 0.24), 0px 1px 2px rgba(54, 123, 245, 0.24);
+  --mcxueShadowDark2dp: 0px 2px 6px rgba(8, 35, 48, 0.24), 0px 1px 2px rgba(8, 35, 48, 0.24);
   --mcxueShadowDark4dp: 0px 4px 8px rgba(8, 35, 48, 0.16), 0px 2px 4px rgba(8, 35, 48, 0.24);
   --mcxueShadowDark8dp: 0px 8px 16px rgba(8, 35, 48, 0.1), 0px 4px 8px rgba(8, 35, 48, 0.16);
   --mcxueShadowDark16dp: 0px 16px 24px rgba(8, 35, 48, 0.08), 0px 6px 12px rgba(8, 35, 48, 0.14);
@@ -84,9 +83,6 @@ $paddingLg: 1.5rem;
 $paddingSm: 0.8rem;
 $paddingSx: 0.4rem;
 $paddingXss: 0.2rem;
-// Button 按钮
-// 布局
-$menuHeight: 65px;
 // tabs
 $emptyColor: #FFF;
 $tabsNavPaddingY: 0.5rem;
