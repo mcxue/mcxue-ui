@@ -19,14 +19,14 @@ export default function Title({ title, caption = '', description = '' }: Props) 
 interface SubTitleProps {
   subTitle: string;
   caption?: string;
-  description: ReactNode;
+  description?: ReactNode;
 }
 
 export function SubTitle({ subTitle, caption = '', description = '' }: SubTitleProps) {
   return (
     <>
       <h2 className={style.subTitle}>{subTitle}<span className={style.description}>{caption}</span></h2>
-      <p className={style.description}>{description}</p>
+      {description ? <p className={style.description}>{description}</p> : null}
     </>
   );
 }

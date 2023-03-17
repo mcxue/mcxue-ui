@@ -31,7 +31,7 @@
     color: var(--mcxueColorGrey80pct);
     border-color: var(--mcxueColorGrey40pct);
     box-shadow: none;
-    &:hover {
+    &:not(.mcxueDisabled):hover {
       color: var(--mcxueColorBlue);
       border-color: var(--mcxueColorBlue);
     }
@@ -39,18 +39,22 @@
   &.mcxueSuccess {
     color: #FFF;
     background-color: var(--mcxueColorGreen);
+    box-shadow: none;
   }
   &.mcxueWarning {
     color: #FFF;
     background-color: var(--mcxueColorYellow);
+    box-shadow: none;
   }
-  &.mcxueFail {
+  &.mcxueError {
     color: #FFF;
     background-color: var(--mcxueColorRed);
+    box-shadow: none;
   }
   &.mcxueInfo {
     color: #FFF;
     background: var(--mcxueColorGrey60pct);
+    box-shadow: none;
   }
   &.mcxueLink {
     box-shadow: none;
@@ -59,7 +63,7 @@
     box-shadow: none;
     border-color: transparent;
     color: var(--mcxueColorGrey80pct);
-    &:hover {
+    &:not(.mcxueDisabled):hover {
       color: var(--mcxueColorBlue);
     }
   }
@@ -94,14 +98,14 @@
   &.mcxueBold {
     font-weight: bold;
   }
-  &:not(.mcxueDisabled):hover {
-    opacity: 0.75;
+  &:not(.mcxueDisabled,.mcxueText):hover {
+    opacity: 0.8;
   }
   &:not(.mcxueDisabled):active {
     opacity: 1;
   }
   &.mcxueLoading {
-    opacity: 0.75;
+    opacity: 0.8;
   }
   &.mcxueDisabled {
     cursor: no-drop;

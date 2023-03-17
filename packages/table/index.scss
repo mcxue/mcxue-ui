@@ -1,0 +1,13 @@
+.mcxueTable {
+  border: 1px solid #E3E5E6;
+  border-collapse: collapse;
+  //table-layout: fixed;
+  .mcxueThreadTr > td, .mcxueTbodyTr > td {
+    border: 1px solid #E3E5E6;
+    padding: 14px;
+  }
+  .mcxueThead {
+    background: #E6EFFF;
+    color: var(--mcxueColorBlue);
+  }
+}

@@ -1,4 +1,4 @@
 .rootLayout {
   display: grid;
-  grid-template-rows: $menuHeight 1fr;
+  grid-template-rows: auto 1fr;
 }

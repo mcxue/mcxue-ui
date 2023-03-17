@@ -1,9 +1,10 @@
-import React, { ReactNode, useEffect, useLayoutEffect, useRef, useState } from 'react';
+import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import Tooltip from '../../../packages/tooltip';
 import Icon from '../../../packages/icon';
 import style from './index.module.scss';
 import hljs from 'highlight.js';
-import { Button } from '../../../packages';
+import { Button } from '../../../index';
+import Message from '../../../packages/message';
 
 interface Props {
   path: string;
@@ -21,8 +22,8 @@ export default function CodeView(props: Props) {
   } = props;
   const [code, setCode] = useState('');
   const [codePanelOpen, setCodePanelOpen] = useState(showCode);
-  const filePath = import.meta.env.DEV ? `/src/usageDemo/${path}.tsx?raw` : `/src/usageDemo/${path}.tsx?raw`;
-  const codeRef = useRef<HTMLElement>(null);
+  const filePath = import.meta.env.DEV ? `/src/demo/${path}.tsx?raw` : `/src/usageDemo/${path}.tsx?raw`;
+  const codeElementRef = useRef<HTMLElement>(null);
   useEffect(() => {
     if (import.meta.env.DEV) {
       import(/* @vite-ignore */ filePath).then(module => {
@@ -34,8 +35,8 @@ export default function CodeView(props: Props) {
   }, [path]);
 
   useLayoutEffect(() => { // code 变动时候，将其代码高亮
-    if (codeRef.current) {
-      hljs.highlightElement(codeRef.current);
+    if (codeElementRef.current) {
+      hljs.highlightElement(codeElementRef.current);
     }
   }, [code]);
 
@@ -48,7 +49,7 @@ export default function CodeView(props: Props) {
               (
                 <Tooltip content={codePanelOpen ? '隐藏代码' : '查看代码'}>
                   <Button
-                    style={{ fontSize: '16px',  padding: '8px' }}
+                    style={{ fontSize: '16px', padding: '8px' }}
                     type="text"
                     onClick={() => {setCodePanelOpen(!codePanelOpen);}}
                   >
@@ -60,7 +61,17 @@ export default function CodeView(props: Props) {
             {
               showCopyButton && (
                 <Tooltip content="复制代码">
-                  <Button style={{ fontSize: '16px', padding: '8px' }} type="text">
+                  <Button
+                    style={{ fontSize: '16px', padding: '8px' }}
+                    type="text"
+                    onClick={() => {
+                      window.navigator.clipboard.writeText(code).then(() => {
+                        Message.success('复制成功');
+                      }).catch(() => {
+                        // Message.error('复制失败');
+                      });
+                    }}
+                  >
                     <Icon name="copy" />
                   </Button>
                 </Tooltip>
@@ -68,9 +79,10 @@ export default function CodeView(props: Props) {
             }
           </div>
         )}
-      <div className={style.pureCode} style={{ visibility: codePanelOpen ? 'hidden' : undefined }}>
+      <div className={style.pureCode}
+           style={{ display: codePanelOpen ? 'block' : 'none' }}>
         <pre>
-          <code className="language-ts" ref={codeRef}>{code}</code>
+          <code className="language-ts" ref={codeElementRef}>{code}</code>
         </pre>
       </div>
     </div>

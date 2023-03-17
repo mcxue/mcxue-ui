@@ -5,8 +5,8 @@ import classNames from 'classnames';
 import { addSuffix } from '../../src/utils';
 import Icon from '../icon';
 
-interface Props {
-  type?: 'plain' | 'success' | 'warning' | 'fail' | 'info' | 'link' | 'text';
+export interface ButtonProps {
+  type?: 'default' | 'plain' | 'success' | 'warning' | 'error' | 'info' | 'link' | 'text';
   bgType?: 'raised' | 'smooth' | 'filled' | 'ghost';
   round?: boolean;
   bold?: boolean;
@@ -22,7 +22,7 @@ interface Props {
   onClick?: MouseEventHandler<HTMLElement>,
 }
 
-const Button = (props: Props) => {
+const Button = (props: ButtonProps): JSX.Element => {
   const {
     type,
     bgType,
@@ -56,8 +56,8 @@ const Button = (props: Props) => {
   const iconClassName = loading ? 'mcxueSpinning mcxueLoading' : '';
   const finalIconStyle = {
     ...iconStyle,
-    marginLeft: (icon && iconPosition === 'right' && children) ? '5px' : 0,
-    marginRight: (icon && iconPosition === 'left' && children) ? '5px' : 0,
+    marginLeft: ((icon || loading) && iconPosition === 'right' && children) ? '5px' : 0,
+    marginRight: ((icon || loading) && iconPosition === 'left' && children) ? '5px' : 0,
   };
   return (
     <button

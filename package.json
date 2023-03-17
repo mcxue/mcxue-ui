@@ -14,6 +14,7 @@
       "require": "./dist/mcxue-ui.umd.cjs"
     }
   },
+  "typings": "./dist/index.d.ts",
   "keywords": [
     "react",
     "typescript",
@@ -26,11 +27,13 @@
   "homepage": "https://github.com/mcxue/mcxue-ui",
   "scripts": {
     "dev": "vite",
-    "start": "yarn dev",
+    "start": "npm run dev",
     "build": "tsc && vite build",
     "preview": "vite preview"
   },
   "devDependencies": {
+    "@rollup/plugin-typescript": "^11.0.0",
+    "@types/node": "^18.15.3",
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
     "@vitejs/plugin-react": "^3.1.0",

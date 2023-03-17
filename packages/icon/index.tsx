@@ -6,6 +6,7 @@ interface Props extends SVGProps<SVGSVGElement> {
   prefix?: string;
   name?: string;
   className?: string;
+  color?:string;
   style?: CSSProperties;
 }
 
