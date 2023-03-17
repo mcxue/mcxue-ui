@@ -1,6 +1,18 @@
+# Mcxue UI 组件库
+
+官网主页待发布～
+
+## 安装
+```
+npm instll mcxue-ui
+yarn add mcxue-ui
+```
+
+## 引入并使用
+```
 import React from 'react';
-import { Button } from '../../../index';
-import { Space } from '../../../index';
+import { Button } from 'mcxue-ui';
+import { Space } from 'mcxue-ui';
 
 export default function Demo() {
   return (
@@ -16,3 +28,5 @@ export default function Demo() {
     </Space>
   );
 }
+
+```

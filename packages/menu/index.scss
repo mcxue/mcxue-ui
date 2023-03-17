@@ -1,0 +1,59 @@
+.mcxueMenu {
+  background: #FFF;
+  color: var(--mcxueColorDark);
+  .mcxueMenuLabel {
+    cursor: default;
+    font-size: 16px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    &.mcxueActive {
+      cursor: default;
+    }
+    &:not(.mcxueMenuGroup):hover {
+      cursor: pointer;
+    }
+  }
+  &.mcxueInlineMode {
+    width: 368px;
+    .mcxueMenuLabel {
+      &.mcxueMenuItemLevel1 {
+        font-size: 20px;
+      }
+      &.mcxueActive {
+        color: var(--mcxueColorBlue);
+        background: var(--mcxueGradientSmooth1Light);
+      }
+      &:not(.mcxueMenuGroup):hover {
+        color: var(--mcxueColorBlue);
+      }
+    }
+  }
+  &.mcxueHorizontalMode {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .mcxueMenuLabel {
+      padding-left: 10px;
+      padding-right: 10px;
+      border-bottom: 4px solid transparent;
+      position: relative;
+      &.mcxueActive{
+        font-weight: bold;
+        &::before{
+          position: absolute;
+          top: 100%;
+          left: 50%;
+          transform: translate(-50%, -4px);
+          content: '';
+          width: 100%;
+          height: 4px;
+          background: var(--mcxueGradientSmooth1);
+          border-radius: 4px;
+        }
+      }
+      &:not(.mcxueMenuGroup):hover {
+        font-weight: bold;
+      }
+    }
+  }
+}

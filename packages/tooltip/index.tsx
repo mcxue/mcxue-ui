@@ -27,7 +27,6 @@ export default function Tooltip(props: Props) {
   useEffect(() => {
     if (show) {
       const absolutePosition = getAbsolutePosition(triggerRef, tooltipRef);
-      console.log(absolutePosition);
       setPosition(absolutePosition);
     }
   }, [show]);
@@ -49,9 +48,9 @@ export default function Tooltip(props: Props) {
             <div
               style={{ left: position.left, top: position.top }}
               ref={tooltipRef}
-              className="mcxueTooltip"
+              className="mcxueTooltipContainer"
             >
-              <div className="mcxueTooltipInner">
+              <div className="mcxueTooltip">
                 {content}
               </div>
               <div className="mcxueArrow" />

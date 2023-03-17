@@ -1,7 +1,7 @@
 .mcxueTooltipTrigger {
   display: inline-block;
 }
-.mcxueTooltip {
+.mcxueTooltipContainer {
   position: fixed;
   margin-bottom: 10px;
   .mcxueArrow {
@@ -13,7 +13,7 @@
     top: 100%;
     transform: translate(-50%, -50%) rotate(45deg);
   }
-  .mcxueTooltipInner {
+  .mcxueTooltip {
     background: rgba(38, 38, 38, 1);
     color: #FFF;
     font-size: 14px;
