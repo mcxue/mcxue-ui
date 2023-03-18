@@ -3,12 +3,10 @@ import DocLayout from '../components/docLayout';
 import RootLayout from '../components/rootLayout';
 import React, { ReactNode } from 'react';
 
-const PAGE_PATH_DICT = {
-  home: '../pages/home',
-  install: '../pages/install',
-  changeLog: '../pages/changeLog',
-  errorPage: '../pages/errorPage',
-};
+const Home = React.lazy(() => import('../pages/home'));
+const Install = React.lazy(() => import('../pages/install'));
+const ChangeLog = React.lazy(() => import('../pages/changeLog'));
+const ErrorPage = React.lazy(() => import('../pages/errorPage'));
 
 const getComponentRouteChildren = (): RouteObject[] => {
   const list: RouteObject[] = [];
@@ -26,20 +24,15 @@ const getComponentRouteChildren = (): RouteObject[] => {
   return list;
 };
 
-const lazyLoad = (path: string): ReactNode => {
-  const Module = React.lazy(() => import(/* @vite-ignore */ path));
-  return <Module />;
-};
-
 const baseRouter: RouteObject[] = [
   {
     path: '/',
     element: <RootLayout />,
-    errorElement: lazyLoad(PAGE_PATH_DICT['errorPage']),
+    errorElement: <ErrorPage />,
     children: [
       {
         path: '',
-        element: lazyLoad(PAGE_PATH_DICT['home']),
+        element: <Home />,
       },
       {
         path: 'start',
@@ -47,11 +40,11 @@ const baseRouter: RouteObject[] = [
         children: [
           {
             path: '*',
-            element: lazyLoad(PAGE_PATH_DICT['install']),
+            element: <Install />,
           },
           {
             path: 'changeLog',
-            element: lazyLoad(PAGE_PATH_DICT['changeLog']),
+            element: <ChangeLog />,
           },
           {
             path: 'components',
