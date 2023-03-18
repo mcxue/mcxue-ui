@@ -29,6 +29,7 @@
     "dev": "vite",
     "start": "npm run dev",
     "build": "tsc && vite build",
+    "build:html": "vite build --config config/build.ts",
     "preview": "vite preview"
   },
   "devDependencies": {

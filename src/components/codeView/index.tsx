@@ -22,16 +22,13 @@ export default function CodeView(props: Props) {
   } = props;
   const [code, setCode] = useState('');
   const [codePanelOpen, setCodePanelOpen] = useState(showCode);
-  const filePath = import.meta.env.DEV ? `/src/demo/${path}.tsx?raw` : `/src/usageDemo/${path}.tsx?raw`;
   const codeElementRef = useRef<HTMLElement>(null);
+  const allPaths = import.meta.glob('/src/demo/**/*.tsx', { as: 'raw' });
   useEffect(() => {
-    if (import.meta.env.DEV) {
-      import(/* @vite-ignore */ filePath).then(module => {
-        setCode(module.default);
-      });
-    } else {
-      fetch(filePath).then(res => res.text()).then(setCode);
-    }
+    if (!allPaths[`/src/demo/${path}.tsx`]) return;
+    allPaths[`/src/demo/${path}.tsx`]().then(content => {
+      setCode(content);
+    });
   }, [path]);
 
   useLayoutEffect(() => { // code 变动时候，将其代码高亮
