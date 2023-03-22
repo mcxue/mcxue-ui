@@ -2,5 +2,12 @@ version: "3"
 services:
   app:
     build: .
-    ports:
-      - "4000:80"
+    labels:
+      - "traefik.http.routers.ui.rule=Host(`ui.mcxue.cn`)"
+      - "traefik.http.routers.ui.tls=true"
+      - "traefik.http.routers.ui.tls.certresolver=le"
+
+networks:
+  default:
+    external:
+      name: traefik_default

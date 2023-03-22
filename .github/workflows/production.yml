@@ -1,0 +1,16 @@
+name: Deploy Mcxue UI Homepage
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v2
+      - name: Deploy
+        run: docker compose up --build -d app
+        env:
+          COMMIT_REF_NAME: ${{ github.ref_name }}
