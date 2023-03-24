@@ -4,7 +4,7 @@
 
 目前组件还不够丰富，在慢慢开发中
 
-文档查询地址如下：[https://ui.mcxue.cn](https://ui.mcxue.cn)
+文档查阅：[https://ui.mcxue.cn](https://ui.mcxue.cn)
 
 ## 安装
 

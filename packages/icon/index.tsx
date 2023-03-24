@@ -2,18 +2,19 @@ import classNames from 'classnames';
 import './index.scss';
 import React, { CSSProperties, SVGProps } from 'react';
 
-interface Props extends SVGProps<SVGSVGElement> {
+export interface IconProps extends SVGProps<SVGSVGElement> {
   prefix?: string;
   name?: string;
   className?: string;
-  color?:string;
+  color?: string;
   style?: CSSProperties;
 }
 
-export default function Icon(props: Props) {
+export default function Icon(props: IconProps) {
   const {
-    className,
+    prefix,
     name = 'logo',
+    className,
     style,
     ...restProps
   } = props;
@@ -24,7 +25,7 @@ export default function Icon(props: Props) {
       className={classNames('mcxueIcon', { [className ?? '']: className })}
       {...restProps}
     >
-      <use xlinkHref={`#mcxue-icon-${name}`} />
+      <use xlinkHref={`#${prefix ?? 'mcxue-icon-'}${name}`} />
     </svg>
   );
 }
