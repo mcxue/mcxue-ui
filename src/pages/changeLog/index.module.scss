@@ -1,0 +1,8 @@
+.paragraphWrapper{
+  font: var(--mcxueFontBody);
+  font-size: 14px;
+  padding-bottom: 20px;
+  > p{
+    padding-top: 5px;
+  }
+}

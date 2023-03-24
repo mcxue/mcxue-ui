@@ -3,13 +3,14 @@ import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 import style from './index.module.scss';
 import Menu from '../../../packages/menu';
 import TailInfo from '../tailInfo';
+import Loading from '../loading';
 
 const MENU_ITEMS = [
   {
     label: '快速上手',
     children: [
       {
-        label: '安装',
+        label: '起步',
         key: '/start/install',
       },
       {
@@ -25,10 +26,10 @@ const MENU_ITEMS = [
         label: 'Button 按钮',
         key: '/start/components/button',
       },
-      {
-        label: 'Switch 开关',
-        key: '/start/components/switch',
-      },
+      // {
+      //   label: 'Switch 开关',
+      //   key: '/start/components/switch',
+      // },
     ],
   },
 ];
@@ -64,7 +65,7 @@ export default function DocLayout() {
       <div style={{ height: '100%', overflow: 'scroll' }}>
         <Nav />
       </div>
-      <Suspense>
+      <Suspense fallback={<Loading />}>
         <div style={{ height: '100%', overflow: 'scroll' }}>
           <div style={{ margin: '0 60px', maxWidth: '1260px' }}>
             <Outlet />

@@ -16,4 +16,8 @@
 .subTitle {
   font: var(--mcxueFontH5);
   padding: 5px 0;
+  .caption {
+    font: var(--mcxueFontBody);
+    margin-left: 12px;
+  }
 }

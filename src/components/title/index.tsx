@@ -1,32 +1,34 @@
-import style from './index.module.scss';
-import { ReactNode } from 'react';
+import styles from './index.module.scss';
+import { CSSProperties, ReactNode } from 'react';
 
 interface Props {
   title: string;
   caption?: string;
   description?: ReactNode;
+  style?: CSSProperties;
 }
 
-export default function Title({ title, caption = '', description = '' }: Props) {
+export default function Title({ title, caption = '', description = '', style }: Props) {
   return (
     <>
-      <h1 className={style.title}>{title}<span className={style.caption}>{caption}</span></h1>
-      <p className={style.description}>{description}</p>
+      <h1 style={style} className={styles.title}>{title}<span className={styles.caption}>{caption}</span></h1>
+      {description ? <p className={styles.description}>{description}</p> : null}
     </>
   );
 }
 
 interface SubTitleProps {
-  subTitle: string;
+  title: string;
   caption?: string;
   description?: ReactNode;
+  style?: CSSProperties;
 }
 
-export function SubTitle({ subTitle, caption = '', description = '' }: SubTitleProps) {
+export function SubTitle({ title, caption = '', description = '', style }: SubTitleProps) {
   return (
     <>
-      <h2 className={style.subTitle}>{subTitle}<span className={style.description}>{caption}</span></h2>
-      {description ? <p className={style.description}>{description}</p> : null}
+      <h2 style={style} className={styles.subTitle}>{title}<span className={styles.caption}>{caption}</span></h2>
+      {description ? <p className={styles.description}>{description}</p> : null}
     </>
   );
 }

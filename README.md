@@ -1,14 +1,20 @@
 # Mcxue UI 组件库
 
-官网主页待发布～
+一套轻量级的 React UI 组件库，使用 Vite + TS + React18 开发，体积小，响应快
+
+目前组件还不够丰富，在慢慢开发中
+
+文档查询地址如下：[https://ui.mcxue.cn](https://ui.mcxue.cn)
 
 ## 安装
+
 ```
-npm instll mcxue-ui
+npm install mcxue-ui
 yarn add mcxue-ui
 ```
 
 ## 引入并使用
+
 ```
 import React from 'react';
 import { Button } from 'mcxue-ui';
@@ -28,5 +34,10 @@ export default function Demo() {
     </Space>
   );
 }
-
 ```
+
+## 缘起
+
+平时会在个人网站上编写一些页面，发现许多地方都可以复用，因此想定制一套自己的组件库，以便在以后的开发中能够更加高效地使用这些组件
+
+组件 API 主要参考 [Ant Design](https://ant.design/components/overview-cn/) , 详情以文档为准

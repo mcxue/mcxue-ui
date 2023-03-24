@@ -1,4 +1,4 @@
-@keyframes iconLoading {
+@keyframes iconSpinning {
   0% {
     transform: rotate(0deg);
   }
@@ -116,6 +116,6 @@
     background: var(--mcxueColorGrey10pct);
   }
   .mcxueSpinning {
-    animation: iconLoading 1.5s linear infinite;
+    animation: iconSpinning 1.5s linear infinite;
   }
 }

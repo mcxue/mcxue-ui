@@ -36,14 +36,19 @@ export default function CommonMenu() {
   return (
     <menu className={style.menu}>
       <div className={style.logoWrapper}>
-        <Icon className={style.logo} name="logo" />
+        <Link to="/">
+          <Icon className={style.logo} name="logo" />
+        </Link>
         <span className={style.text}>Mcxue UI</span>
       </div>
       <Menu
         items={MENU_ITEMS}
         mode="horizontal"
         selectedKeys={selectedKeys}
-        onClick={(e) => {navigate(e.keys[0]);}}
+        onClick={(e) => {
+          if (e.keys[0] === selectedKeys) return;
+          navigate(e.keys[0]);
+        }}
       />
       <div className={style.externalLinks}>
         <Link target="_blank" rel="noreferrer" to="https://github.com/mcxue/mcxue-ui">

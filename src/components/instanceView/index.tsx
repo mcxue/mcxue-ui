@@ -18,7 +18,7 @@ export default function InstanceView(props: Props) {
   const { subTitle, caption, description, demo, path, showCode, showCopyButton, showPreview } = props;
   return (
     <div className={style.instanceView}>
-      <SubTitle subTitle={subTitle} caption={caption} description={description} />
+      <SubTitle title={subTitle} caption={caption} description={description} />
       <div className={style.demoViewWrapper}>
         {demo}
       </div>

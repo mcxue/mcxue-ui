@@ -2,9 +2,14 @@ import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import Tooltip from '../../../packages/tooltip';
 import Icon from '../../../packages/icon';
 import style from './index.module.scss';
-import hljs from 'highlight.js';
 import { Button } from '../../../index';
 import Message from '../../../packages/message';
+import hljs from 'highlight.js/lib/core';
+import typescript from 'highlight.js/lib/languages/typescript';
+import xml from 'highlight.js/lib/languages/xml'
+hljs.registerLanguage('typescript', typescript);
+hljs.registerLanguage('xml', xml);
+
 
 interface Props {
   path: string;
