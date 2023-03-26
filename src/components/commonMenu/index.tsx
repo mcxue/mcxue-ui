@@ -1,9 +1,7 @@
 import React, { useCallback, useMemo } from 'react';
 import style from './index.module.scss';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import Icon from '../../../packages/icon';
-import Menu from '../../../packages/menu';
-import { Button } from '../../../index';
+import { Button, Menu, Icon } from 'mcxue-ui';
 
 const MENU_ITEMS = [
   {

@@ -1,4 +1,4 @@
-import { Table } from '../../../index';
+import { Table } from 'mcxue-ui';
 
 interface DataItem {
   param: string;

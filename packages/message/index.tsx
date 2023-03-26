@@ -23,12 +23,12 @@ const createMessageWrapper = () => {
   return messageWrapper;
 };
 
-interface Props {
+export interface MessageProps {
   type?: MessageType;
   content?: string;
 }
 
-const MessageInner = (props: Props) => {
+const MessageInner = (props: MessageProps) => {
   const { type = 'info', content = '' } = props;
   return <div className={classNames(
     'mcxueMessage', {

@@ -1,4 +1,4 @@
-import { Button, Space } from '../../../index';
+import { Button, Space } from 'mcxue-ui';
 import React, { useState } from 'react';
 
 export default function Demo() {

@@ -1,6 +1,6 @@
 import React from 'react';
-import { Button } from '../../../index';
-import { Space } from '../../../index';
+import { Button } from 'mcxue-ui';
+import { Space } from 'mcxue-ui';
 
 export default function Demo() {
   return (

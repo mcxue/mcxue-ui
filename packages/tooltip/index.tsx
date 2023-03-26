@@ -12,13 +12,13 @@ const getAbsolutePosition = (triggerRef: RefObject<HTMLElement>, tooltipRef: Ref
   return { left, top };
 };
 
-interface Props {
+export interface TooltipProps {
   children: ReactElement;
   content?: ReactNode;
   arrow?: boolean;
 }
 
-export default function Tooltip(props: Props) {
+export default function Tooltip(props: TooltipProps) {
   const { children, content } = props;
   const triggerRef = useRef<HTMLDivElement | null>(null);
   const tooltipRef = useRef<HTMLDivElement | null>(null);

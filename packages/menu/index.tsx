@@ -13,7 +13,7 @@ interface MenuItem {
 
 type KeyPath = string // '0.0' '0.2'
 
-interface Props {
+export interface MenuProps {
   mode?: 'horizontal' | 'inline' | 'vertical'; // 菜单类型，默认是 inline
   items: MenuItem[];
   selectedKeys?: string[] | KeyPath;
@@ -21,7 +21,7 @@ interface Props {
 }
 
 // todo 先写的残血版的内嵌型 inline，后写的残血版的 horizontal，以后再写 vertical
-export default function Menu(props: Props) {
+export default function Menu(props: MenuProps) {
   const { selectedKeys, items, onClick, mode = 'inline' } = props;
   const innerSelectedKeys = typeof selectedKeys === 'string' ? selectedKeys.split('.') : selectedKeys ?? [];
   // todo 默认全部展开，展示和合并的功能以后再添加哈

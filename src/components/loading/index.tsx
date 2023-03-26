@@ -1,4 +1,4 @@
-import Icon from '../../../packages/icon';
+import { Icon } from 'mcxue-ui';
 import style from './index.module.scss';
 
 export default function Loading() {

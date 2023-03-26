@@ -5,6 +5,11 @@ import path from 'node:path';
 
 export default defineConfig({
   plugins: [react()],
+  resolve: {
+    alias: {
+      'mcxue-ui': path.resolve(path.resolve(), 'index'),
+    },
+  },
   css: {
     preprocessorOptions: {
       scss: {

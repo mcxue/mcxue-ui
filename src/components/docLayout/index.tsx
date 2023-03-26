@@ -1,7 +1,7 @@
 import React, { Suspense, useMemo, useCallback } from 'react';
 import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 import style from './index.module.scss';
-import Menu from '../../../packages/menu';
+import { Menu } from 'mcxue-ui';
 import TailInfo from '../tailInfo';
 import Loading from '../loading';
 
