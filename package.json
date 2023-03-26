@@ -1,7 +1,7 @@
 {
   "name": "mcxue-ui",
   "private": false,
-  "version": "0.0.6",
+  "version": "0.0.11",
   "type": "module",
   "files": [
     "dist/*"
@@ -16,6 +16,10 @@
     "./dist/style.css": {
       "import": "./dist/style.css",
       "require": "./dist/style.css"
+    },
+    "./dist/iconfont.js": {
+      "import": "./dist/iconfont.js",
+      "require": "./dist/iconfont.js"
     }
   },
   "typings": "./dist/index.d.ts",
@@ -34,7 +38,6 @@
     "start": "npm run dev",
     "build": "tsc && vite build",
     "build:html": "vite build --config config/build.ts",
-    "deploy:html": "bash -c ./scripts/deploy.sh",
     "preview": "vite preview"
   },
   "devDependencies": {

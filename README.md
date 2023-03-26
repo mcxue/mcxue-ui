@@ -21,8 +21,9 @@ yarn add mcxue-ui
 import 'mcxue-ui/dist/style.css'
 ```
 
-## 引入并使用
+## 引入组件
 
+引入组件的方式如下所示
 ```
 import React from 'react';
 import { Button } from 'mcxue-ui';
@@ -42,6 +43,15 @@ export default function Demo() {
     </Space>
   );
 }
+```
+
+## 使用组件内 Icon
+
+如果想要组件的 Icon，需要在项目的主入口处引入 iconfont.js 文件，比如在 `main.tsx` 中添加以下这两句
+```
+import addIconfont from 'mcxue-ui/dist/iconfont.js';
+
+addIconfont();
 ```
 
 ## 缘起

@@ -36,6 +36,12 @@ export default function Install() {
       <pre>
         <code className="language-ts" style={{ background: 'rgba(0,0,0,0.04)' }}>import 'mcxue-ui/dist/style.css'</code>
       </pre>
+      <SubTitle style={{ paddingTop: '30px' }} title="使用组件内 Icon" />
+      <p className={style.paragraph}>如果想要组件的 Icon，需要在项目的主入口处引入 iconfont.js 文件，比如在 main.tsx 中添加以下这两句</p>
+      <pre>
+        <code className="language-ts" style={{ background: 'rgba(0,0,0,0.04)' }}>import addIconfont from 'mcxue-ui/dist/iconfont.js';</code>
+        <code className="language-ts" style={{ background: 'rgba(0,0,0,0.04)' }}>addIconfont();</code>
+      </pre>
       <SubTitle style={{ paddingTop: '30px' }} title="使用示例" />
       <p className={style.paragraph}>这是一个简单使用按钮组件的示例</p>
       <pre>
