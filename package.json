@@ -1,7 +1,7 @@
 {
   "name": "mcxue-ui",
   "private": false,
-  "version": "0.0.4",
+  "version": "0.0.5",
   "type": "module",
   "files": [
     "dist/*"
@@ -12,6 +12,10 @@
     ".": {
       "import": "./dist/mcxue-ui.es.js",
       "require": "./dist/mcxue-ui.umd.cjs"
+    },
+    "./dist/style.css": {
+      "import": "./dist/style.css",
+      "require": "./dist/style.css"
     }
   },
   "typings": "./dist/index.d.ts",
