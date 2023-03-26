@@ -13,6 +13,14 @@ npm install mcxue-ui
 yarn add mcxue-ui
 ```
 
+## 引入样式文件
+
+需要在项目的主入口处引入组件库的样式文件，比如在 `main.tsx` 中添加以下这一句
+
+```
+import 'mcxue-ui/dist/style.css'
+```
+
 ## 引入并使用
 
 ```

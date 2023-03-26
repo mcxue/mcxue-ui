@@ -31,10 +31,10 @@ export default function Install() {
       <pre>
         <code className="language-bash" style={{ background: 'rgba(0,0,0,0.04)' }}>yarn add mcxue-ui</code>
       </pre>
-      <SubTitle style={{ paddingTop: '30px' }} title="引入组件库的样式文件" />
-      <p className={style.paragraph}>需要在项目的主入口处引入，比如 main.tsx 中</p>
+      <SubTitle style={{ paddingTop: '30px' }} title="引入样式文件" />
+      <p className={style.paragraph}>需要在项目的主入口处引入组件库的样式文件，比如在 main.tsx 中添加以下这一句</p>
       <pre>
-        <code className="language-ts" style={{ background: 'rgba(0,0,0,0.04)' }}>import "mcxue-ui/dist/style.css"</code>
+        <code className="language-ts" style={{ background: 'rgba(0,0,0,0.04)' }}>import 'mcxue-ui/dist/style.css'</code>
       </pre>
       <SubTitle style={{ paddingTop: '30px' }} title="使用示例" />
       <p className={style.paragraph}>这是一个简单使用按钮组件的示例</p>
