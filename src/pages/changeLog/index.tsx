@@ -10,7 +10,7 @@ export default function ChangeLog() {
       <div className={styles.paragraphWrapper}>
         <p className="paragraph"><span>记录 mcxue-ui 组件库的版本更新，遵循 </span><Link to="https://semver.org/lang/zh-CN/">Semantic Versioning 2.0.0</Link> 语义化版本规范</p>
       </div>
-      <SubTitle title="v0.2.0" caption="2023-04-01" />
+      <SubTitle title="v0.1.0" caption="2023-04-01" />
       <div className={styles.paragraphWrapper}>
         <p>1. 新增 9 个组件：Switch、Space、Icon、Portal、Alert、Message、Tooltip、Table、Menu</p>
         <p>2. 更新 iconfont，完善项目结构</p>
