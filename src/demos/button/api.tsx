@@ -1,14 +1,14 @@
-import { SubTitle } from '../../components/title';
-import ApiTable from '../../components/apiTable';
+import { SubSubTitle, SubTitle } from '../../components/title';
+import ApiTable, { ApiTableProps } from '../../components/apiTable';
 
-export function Api() {
-  const dataSource = [
+export default function Api() {
+  const dataSource: ApiTableProps['dataSource'] = [
     {
       param: 'type',
       type: `'default' | 'plain' | 'success' | 'warning' | 'error' | 'info' | 'link' | 'text'`,
       required: '否',
       default: 'default',
-      description: `设置按钮类型，有八种，默认是 default 类型`
+      description: `设置按钮类型，有八种，默认是 default 类型`,
     },
     {
       param: 'bgType',
@@ -56,28 +56,27 @@ export function Api() {
       param: 'iconStyle',
       type: `CSSProperties`,
       required: '否',
-      default: '{}',
+      default: null,
       description: '设置图标的样式，组件库使用的 Symbol 方式引入图标，所以对于它的样式，fontSize 能设置其大小，color 能设置它的颜色',
     },
     {
       param: 'className',
       type: `string`,
       required: '否',
-      default: '{}',
-      description: '在 button 上添加 className，然后自定义按钮样式',
+      default: null,
+      description: '自定义 Button 类名',
     },
     {
-      param: 'styles',
+      param: 'style',
       type: `CSSProperties`,
       required: '否',
-      default: '{}',
-      description: '另一种自定义按钮样式的方式',
+      default: null,
+      description: '自定义 Button 样式',
     },
     {
       param: 'children',
       type: `ReactNode`,
       required: '否',
-      default: 'undefined',
       description: '按钮内容',
     },
     {
@@ -98,13 +97,14 @@ export function Api() {
       param: 'onClick',
       type: `MouseEventHandler<HTMLElement>`,
       required: '否',
-      default: 'undefined',
+      default: null,
       description: '点击事件',
     },
   ];
   return (
     <div style={{ fontSize: '14px' }}>
       <SubTitle title="API 说明" />
+      <SubSubTitle title="ButtonProps" />
       <ApiTable dataSource={dataSource} />
     </div>
   );

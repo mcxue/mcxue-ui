@@ -1,24 +1,23 @@
 import Title from '../../components/title';
 import InstanceView from '../../components/instanceView';
-import Demo1 from '../../demo/button/demo1';
-import Demo2 from '../../demo/button/demo2';
-import Demo3 from '../../demo/button/demo3';
-import Demo4 from '../../demo/button/demo4';
-import Demo5 from '../../demo/button/demo5';
-import Demo6 from '../../demo/button/demo6';
-import Demo7 from '../../demo/button/demo7';
-import { Api } from '../../demo/button/api';
+import Demo from '../../demos/button/demo';
+import Demo2 from '../../demos/button/demo2';
+import Demo3 from '../../demos/button/demo3';
+import Demo4 from '../../demos/button/demo4';
+import Demo5 from '../../demos/button/demo5';
+import Demo6 from '../../demos/button/demo6';
+import Demo7 from '../../demos/button/demo7';
+import Api from '../../demos/button/api';
 
-
-export default function ButtonUsage() {
+export default function Usage() {
   return (
     <div>
       <Title title="Button" caption="按钮" description="网页常用 button 按钮，常用于响应一个事件或处理某个逻辑。" />
       <InstanceView
-        subTitle="按钮类型"
-        description="Button 按钮的基本使用。包含八种不同的类型：默认按钮、朴素按钮、成功按钮、警告按钮、失败按钮、信息按钮、链接按钮、文本按钮。"
-        demo={<Demo1 />}
-        path="button/demo1"
+        subTitle="代码演示"
+        description="基本使用，包含八种不同的类型：默认按钮、朴素按钮、成功按钮、警告按钮、失败按钮、信息按钮、链接按钮、文本按钮。"
+        demo={<Demo />}
+        path="button/demo"
       />
       <InstanceView
         subTitle="按钮样式"

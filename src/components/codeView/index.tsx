@@ -26,10 +26,10 @@ export default function CodeView(props: Props) {
   const [code, setCode] = useState('');
   const [codePanelOpen, setCodePanelOpen] = useState(showCode);
   const codeElementRef = useRef<HTMLElement>(null);
-  const allPaths = import.meta.glob('/src/demo/**/*.tsx', { as: 'raw' });
+  const allPaths = import.meta.glob('/src/demos/**/*.tsx', { as: 'raw' });
   useEffect(() => {
-    if (!allPaths[`/src/demo/${path}.tsx`]) return;
-    allPaths[`/src/demo/${path}.tsx`]().then(content => {
+    if (!allPaths[`/src/demos/${path}.tsx`]) return;
+    allPaths[`/src/demos/${path}.tsx`]().then(content => {
       setCode(content);
     });
   }, [path]);
@@ -47,7 +47,7 @@ export default function CodeView(props: Props) {
           <div className={style.buttonWrapper}>
             {
               (
-                <Tooltip content={codePanelOpen ? '隐藏代码' : '查看代码'}>
+                <Tooltip arrow content={codePanelOpen ? '隐藏代码' : '查看代码'}>
                   <Button
                     style={{ fontSize: '16px', padding: '8px' }}
                     type="text"
@@ -60,15 +60,15 @@ export default function CodeView(props: Props) {
             }
             {
               showCopyButton && (
-                <Tooltip content="复制代码">
+                <Tooltip arrow content="复制代码">
                   <Button
                     style={{ fontSize: '16px', padding: '8px' }}
                     type="text"
                     onClick={() => {
                       window.navigator.clipboard.writeText(code).then(() => {
-                        Message.success('复制成功');
-                      }).catch(() => {
-                        // Message.error('复制失败');
+                        Message.success({ content: '复制成功' });
+                      }).catch((e) => {
+                        Message.error({ content: e });
                       });
                     }}
                   >

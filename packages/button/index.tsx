@@ -22,7 +22,7 @@ export interface ButtonProps {
   onClick?: MouseEventHandler<HTMLElement>,
 }
 
-const Button = (props: ButtonProps): JSX.Element => {
+export default function (props: ButtonProps) {
   const {
     type,
     bgType,
@@ -77,5 +77,3 @@ const Button = (props: ButtonProps): JSX.Element => {
     </button>
   );
 };
-
-export default Button;

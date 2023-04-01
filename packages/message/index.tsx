@@ -3,7 +3,7 @@ import Icon from '../icon';
 import './index.scss';
 import classNames from 'classnames';
 
-type MessageType = 'info' | 'success' | 'fail' | 'warning'
+type MessageType = 'info' | 'success' | 'error' | 'warning' | 'loading'
 
 const createMessageContainer = () => {
   const messageContainer = document.createElement('div');
@@ -23,40 +23,50 @@ const createMessageWrapper = () => {
   return messageWrapper;
 };
 
-export interface MessageProps {
+export interface MessageInnerProps {
   type?: MessageType;
   content?: string;
 }
 
-const MessageInner = (props: MessageProps) => {
+const MessageInner = (props: MessageInnerProps) => {
   const { type = 'info', content = '' } = props;
   return <div className={classNames(
     'mcxueMessage', {
       mcxueInfo: type === 'info',
       mcxueSuccess: type === 'success',
-      mcxueFail: type === 'fail',
+      mcxueError: type === 'error',
       mcxueWarning: type === 'warning',
+      mcxueLoading: type === 'loading',
     },
-  )}><Icon name={type} />{content}</div>;
+  )}><Icon name={type === 'loading' ? type : type + '-fill'} />{content}</div>;
 };
 
-const createMessageFn = (type: MessageType) => {
-  return (content: string, time?: number) => {
+export interface MessageConfig {
+  content: string;
+  type?: MessageType;
+  duration?: number;
+}
+
+const Message = {
+  open: (messageConfig: MessageConfig) => {
+    const {
+      content,
+      duration = 3,
+      type = 'info',
+    } = messageConfig;
     const messageWrapper = createMessageWrapper();
     const root = ReactDOM.createRoot(messageWrapper as HTMLElement);
     root.render(<MessageInner type={type} content={content} />);
     setTimeout(() => {
       root.unmount();
       messageWrapper.remove();
-    }, (time ?? 3) * 1000);
-  };
-};
-
-const Message = {
-  info: createMessageFn('info'),
-  success: createMessageFn('success'),
-  fail: createMessageFn('fail'),
-  warning: createMessageFn('warning'),
+    }, (duration ?? 3) * 1000);
+  },
+  info: ({ content, duration }: MessageConfig) => Message.open({ content, duration, type: 'info' }),
+  success: ({ content, duration }: MessageConfig) => Message.open({ content, duration, type: 'success' }),
+  error: ({ content, duration }: MessageConfig) => Message.open({ content, duration, type: 'error' }),
+  warning: ({ content, duration }: MessageConfig) => Message.open({ content, duration, type: 'warning' }),
+  loading: ({ content, duration }: MessageConfig) => Message.open({ content, duration, type: 'loading' }),
 };
 
 export default Message;

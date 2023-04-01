@@ -1,0 +1,72 @@
+.mcxueAlert {
+  border: 1px solid var(--mcxueColorBlue);
+  background: #E6F4FF;
+  padding: 8px 12px;
+  color: var(--mcxueColorDark);
+  font: var(--mcxueFontBody2);
+  border-radius: 8px;
+  position: relative;
+  .mcxueAlertIcon {
+    display: inline-block;
+    font-size: 16px;
+    margin-right: 8px;
+    color: var(--mcxueColorBlue);
+  }
+  .mcxueAlertCloseIcon {
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+  .mcxueAlertDescription {
+    margin-top: 8px;
+  }
+  &.mcxueSuccess {
+    border: 1px solid var(--mcxueColorGreen);
+    background: #F6FFED;
+    .mcxueAlertIcon {
+      color: var(--mcxueColorGreen);
+    }
+  }
+  &.mcxueError {
+    border: 1px solid var(--mcxueColorRed);
+    background: #FFF2F0;
+    .mcxueAlertIcon {
+      color: var(--mcxueColorRed);
+    }
+  }
+  &.mcxueWarning {
+    border: 1px solid var(--mcxueColorYellow);
+    background: #FFFBE6;
+    .mcxueAlertIcon {
+      color: var(--mcxueColorYellow);
+    }
+  }
+  &.mcxueInfo {
+    border: 1px solid var(--mcxueColorGrey60pct);
+    background: var(--mcxueColorGrey20pct);
+    .mcxueAlertIcon {
+      color: var(--mcxueColorGrey60pct);
+    }
+  }
+  &.mcxueWithDescription {
+    padding: 20px 24px;
+    display: flex;
+    .mcxueAlertIcon {
+      font-size: 24px;
+    }
+    .mcxueAlertCloseIcon {
+      top: 16px;
+      right: 16px;
+      transform: translate(0, 0);
+    }
+    .mcxueAlertTitle {
+      display: block;
+      font: var(--mcxueFontBody);
+    }
+  }
+}

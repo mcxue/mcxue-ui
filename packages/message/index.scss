@@ -1,3 +1,4 @@
+@import '../icon/iconSpinning';
 .mcxueMessageContainer {
   position: fixed;
   top: 0;
@@ -7,28 +8,33 @@
   .mcxueMessage {
     background: #FFF;
     padding: 6px 12px;
-    border-radius: 2px;
+    border-radius: 6px;
     color: var(--mcxueColorDark);
     box-shadow: var(--mcxueShadowDark2dp);
     margin-top: 16px;
     font-size: 14px;
     .mcxueIcon {
       margin-right: 8px;
-      color: var(--mcxueColorDark);
+      color: var(--mcxueColorBlue);
     }
     &.mcxueSuccess {
       .mcxueIcon {
         color: var(--mcxueColorGreen);
       }
     }
-    &.mcxueFail {
+    &.mcxueError {
       .mcxueIcon {
         color: var(--mcxueColorRed);
       }
     }
     &.mcxueWarning {
       .mcxueIcon {
-        color: var(--mcxueColorRed);
+        color: var(--mcxueColorYellow);
+      }
+    }
+    &.mcxueLoading {
+      .mcxueIcon {
+        animation: mcxueIconSpinning 1.5s linear infinite;
       }
     }
   }

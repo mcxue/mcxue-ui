@@ -1,23 +1,21 @@
 import React, { ReactNode } from 'react';
 import './index.scss';
 
-interface Column {
+export interface TableColumnType<RecordType> {
   title: ReactNode;
-  dataIndex: string;
+  dataIndex: keyof RecordType;
   width?: number;
   minWidth?: string;
   maxWidth?: string;
-  render?: (item: any, dataItem: DataItem) => ReactNode;
+  render?: (item: RecordType[keyof RecordType], dataItem: RecordType) => ReactNode;
 }
 
-type DataItem = any;
-
-export interface TableProps {
-  columns: Column[];
-  dataSource: DataItem[];
+export interface TableProps<RecordType> {
+  columns: TableColumnType<RecordType>[];
+  dataSource: RecordType[];
 }
 
-export default function Table(props: TableProps) {
+export default function Table<RecordType extends object = any>(props: TableProps<RecordType>) {
   const { columns, dataSource } = props;
   return (
     <table className="mcxueTable" width="100%">
@@ -44,10 +42,12 @@ export default function Table(props: TableProps) {
           return (
             <tr key={index} className="mcxueTbodyTr">
               {
-                columns.map((column, index) => (
-                  <td
-                    key={index}>{column.render ? column.render(dataItem[column.dataIndex], dataItem) : dataItem[column.dataIndex]}</td>
-                ))
+                columns.map((column, index) => {
+                  return (
+                    <td
+                      key={index}>{column.render ? column.render(dataItem[column.dataIndex], dataItem) : dataItem[column.dataIndex] as ReactNode}</td>
+                  );
+                })
               }
             </tr>
           );

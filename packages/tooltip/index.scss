@@ -3,7 +3,6 @@
 }
 .mcxueTooltipContainer {
   position: fixed;
-  margin-bottom: 10px;
   .mcxueArrow {
     background: rgba(38, 38, 38, 1);
     width: 6 * 1.414px;
@@ -11,13 +10,30 @@
     position: absolute;
     left: 50%;
     top: 100%;
-    transform: translate(-50%, -50%) rotate(45deg);
+    border-radius: 2px;
+    transform: translate(-50%, calc(-50% - 1px)) rotate(45deg);
+    &.mcxueLeft {
+      left: 100%;
+      top: 50%;
+      transform: translate(calc(-50% - 1px), -50%) rotate(45deg);
+    }
+    &.mcxueRight {
+      left: 0;
+      top: 50%;
+      transform: translate(calc(-50% + 1px), -50%) rotate(45deg);
+    }
+    &.mcxueBottom {
+      left: 50%;
+      top: 0;
+      transform: translate(-50%, calc(-50% + 1px)) rotate(45deg);
+    }
   }
   .mcxueTooltip {
     background: rgba(38, 38, 38, 1);
     color: #FFF;
     font-size: 14px;
     padding: 8px 14px;
-    border-radius: 3px;
+    border-radius: 4px;
+    box-shadow: var(--mcxueShadowDark2dp);
   }
 }

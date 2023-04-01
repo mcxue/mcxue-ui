@@ -1,32 +1,47 @@
-import React, { ReactElement, ReactNode, RefObject, useEffect, useRef, useState } from 'react';
-import { Portal } from '../portal';
+import React, { ReactNode, RefObject, useEffect, useRef, useState } from 'react';
+import Portal from '../portal';
 import './index.scss';
+import classNames from 'classnames';
 
-// todo 暂时只支持水平中间，垂直上面的位置
-const getAbsolutePosition = (triggerRef: RefObject<HTMLElement>, tooltipRef: RefObject<HTMLElement>) => {
+const getAbsolutePosition = (triggerRef: RefObject<HTMLElement>, tooltipRef: RefObject<HTMLElement>, position: TooltipPosition, offset: number) => {
   const triggerRect = triggerRef.current?.getBoundingClientRect();
   const tooltipRect = tooltipRef.current?.getBoundingClientRect();
   if (!triggerRect || !tooltipRect) return { left: 0, top: 0 };
-  const left = triggerRect.left + triggerRect.width / 2 + -tooltipRect.width / 2;
-  const top = (triggerRect.top || 0) - (tooltipRect.height || 0);
+  let left = triggerRect.left + triggerRect.width / 2 - tooltipRect.width / 2;
+  let top = triggerRect.top - tooltipRect.height - offset;
+  if (position === 'left') {
+    left = triggerRect.left - tooltipRect.width - offset;
+    top = triggerRect.top + triggerRect.height / 2 - tooltipRect.height / 2;
+  } else if (position === 'right') {
+    left = triggerRect.left + triggerRect.width + offset;
+    top = triggerRect.top + triggerRect.height / 2 - tooltipRect.height / 2;
+  } else if (position === 'bottom') {
+    left = triggerRect.left + triggerRect.width / 2 - tooltipRect.width / 2;
+    top = triggerRect.top + triggerRect.height + offset;
+  }
   return { left, top };
 };
 
+type TooltipPosition = 'top' | 'left' | 'right' | 'bottom'
+
 export interface TooltipProps {
-  children: ReactElement;
+  children: ReactNode;
   content?: ReactNode;
   arrow?: boolean;
+  placement?: TooltipPosition;
+  offset?: number;
+  color?: string;
 }
 
 export default function Tooltip(props: TooltipProps) {
-  const { children, content } = props;
+  const { children, content, placement, offset = 6, arrow = true, color } = props;
   const triggerRef = useRef<HTMLDivElement | null>(null);
   const tooltipRef = useRef<HTMLDivElement | null>(null);
   const [position, setPosition] = useState({ left: 0, top: 0 });
   const [show, setShow] = useState(false);
   useEffect(() => {
     if (show) {
-      const absolutePosition = getAbsolutePosition(triggerRef, tooltipRef);
+      const absolutePosition = getAbsolutePosition(triggerRef, tooltipRef, placement ?? 'top', offset ?? 0);
       setPosition(absolutePosition);
     }
   }, [show]);
@@ -34,12 +49,8 @@ export default function Tooltip(props: TooltipProps) {
     <div
       className="mcxueTooltipTrigger"
       ref={triggerRef}
-      onMouseEnter={() => {
-        setShow(true);
-      }}
-      onMouseLeave={() => {
-        setShow(false);
-      }}
+      onMouseEnter={() => {setShow(true);}}
+      onMouseLeave={() => {setShow(false);}}
     >
       {children}
       {
@@ -50,10 +61,16 @@ export default function Tooltip(props: TooltipProps) {
               ref={tooltipRef}
               className="mcxueTooltipContainer"
             >
-              <div className="mcxueTooltip">
-                {content}
-              </div>
-              <div className="mcxueArrow" />
+              <div className="mcxueTooltip" style={{ background: color }}>{content}</div>
+              {
+                arrow && (
+                  <div style={{ background: color }} className={classNames('mcxueArrow', {
+                    mcxueLeft: placement === 'left',
+                    mcxueRight: placement === 'right',
+                    mcxueBottom: placement === 'bottom',
+                  })} />
+                )
+              }
             </div>
           </Portal>
         )

@@ -1,7 +1,7 @@
 import { createBrowserRouter, Navigate, RouteObject } from 'react-router-dom';
 import DocLayout from '../components/docLayout';
 import RootLayout from '../components/rootLayout';
-import React, { ReactNode } from 'react';
+import React from 'react';
 
 const Home = React.lazy(() => import('../pages/home'));
 const Install = React.lazy(() => import('../pages/install'));

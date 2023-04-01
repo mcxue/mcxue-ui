@@ -1,0 +1,72 @@
+@import '../icon/iconSpinning.scss';
+.mcxueSwitch {
+  min-width: 44px;
+  height: 22px;
+  color: white;
+  font: var(--mcxueFontBody2);
+  display: inline-block;
+  border-radius: 100px;
+  background: var(--mcxueColorGrey60pct);
+  border: none;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  .mcxueSwitchHandle {
+    position: absolute;
+    top: 50%;
+    left: 2px;
+    transform: translate(0, -50%);
+    background: #FFF;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    transition: all .2s ease-in-out;
+  }
+  .mcxueSwitchCheckedChildren {
+    white-space: nowrap;
+    position: absolute;
+    right: 100%;
+    top: 50%;
+    transform: translate(0, -50%);
+    transition: all .2s ease-in-out;
+  }
+  .mcxueSwitchUnCheckedChildren {
+    white-space: nowrap;
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translate(calc(-100% - 8px), -50%);
+    transition: all .2s ease-in-out;
+  }
+  &:not(.mcxueDisabled,.mcxueLoading):hover {
+    background: var(--mcxueColorGrey40pct);
+  }
+  &.mcxueChecked {
+    background: var(--mcxueColorBlue);
+    .mcxueSwitchHandle {
+      left: calc(100% - 2px - 18px);
+    }
+    .mcxueSwitchCheckedChildren {
+      transform: translate(calc(100% + 8px), -50%);
+    }
+    .mcxueSwitchUnCheckedChildren {
+      transform: translate(0, -50%);
+    }
+    &:not(.mcxueDisabled,.mcxueLoading):hover {
+      background: #4096FF;
+    }
+  }
+  &:not(.mcxueLoading).mcxueDisabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  &.mcxueLoading {
+    opacity: 0.5;
+    cursor: wait;
+  }
+  .mcxueSwitchLoadingIcon {
+    color: var(--mcxueColorGrey60pct);
+    animation: mcxueIconSpinning 1.5s linear infinite;
+    cursor: wait;
+  }
+}

@@ -1,25 +1,20 @@
-import { Table } from 'mcxue-ui';
+import { Table, TableColumnType } from 'mcxue-ui';
+import Code from '../code';
 
-interface DataItem {
+interface RecordType {
   param: string;
   type: string;
   required: string;
-  default: string;
-  description: string;
+  default?: string | null | undefined;
+  description: JSX.Element | string | number;
 }
 
-type Props = {
-  dataSource: DataItem[]
+export type ApiTableProps = {
+  dataSource: RecordType[];
 }
 
-export default function ApiTable({ dataSource }: Props) {
-  const codeStyle = {
-    background: 'rgba(0, 0, 0, 0.04)',
-    border: '1px solid rgba(5, 5, 5, 0.06)',
-    borderRadius: '3px',
-    padding: '0.03em 0.4em',
-  };
-  const columns = [
+export default function ApiTable({ dataSource }: ApiTableProps) {
+  const columns: TableColumnType<RecordType>[] = [
     {
       title: '参数',
       dataIndex: 'param',
@@ -29,7 +24,7 @@ export default function ApiTable({ dataSource }: Props) {
       title: '类型',
       dataIndex: 'type',
       width: 300,
-      render: (text: string) => (<code style={codeStyle}>{text}</code>),
+      render: (text) => (<Code>{text}</Code>),
     },
     {
       title: '必填',
@@ -42,7 +37,10 @@ export default function ApiTable({ dataSource }: Props) {
       title: '默认值',
       dataIndex: 'default',
       width: 100,
-      render: (text: string) => (<code style={codeStyle}>{text}</code>),
+      minWidth: '86px',
+      render: (text) => (
+        text ? <Code>{text}</Code> : <span style={{ padding: '0.03em 0.4em' }}>-</span>
+      ),
     },
     {
       title: '说明',
@@ -51,6 +49,6 @@ export default function ApiTable({ dataSource }: Props) {
     },
   ];
   return (
-    <Table columns={columns} dataSource={dataSource} />
+    <Table<RecordType> columns={columns} dataSource={dataSource} />
   );
 }

@@ -1,6 +1,8 @@
 .mcxueSpace {
   display: flex;
-  flex-wrap: wrap;
+  flex-flow: row wrap;
   align-items: baseline;
-  gap: 10px;
+  &.mcxueVertical {
+    flex-flow: column wrap;
+  }
 }
