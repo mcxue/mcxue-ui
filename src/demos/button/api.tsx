@@ -33,7 +33,7 @@ export function Api() {
     },
     {
       param: 'size',
-      type: `'medium' 'large' | 'small'`,
+      type: `'medium' | 'large' | 'small'`,
       required: '否',
       default: 'medium',
       description: '设置三种不同类型的按钮，默认是中等大小',
@@ -104,7 +104,7 @@ export function Api() {
   ];
   return (
     <div style={{ fontSize: '14px' }}>
-      <SubTitle subTitle="API 说明" />
+      <SubTitle title="API 说明" />
       <ApiTable dataSource={dataSource} />
     </div>
   );
