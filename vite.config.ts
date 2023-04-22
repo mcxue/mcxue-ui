@@ -39,4 +39,11 @@ export default defineConfig({
       ],
     },
   },
+  // @ts-ignore
+  test: {
+    environment: 'jsdom',
+    coverage: {
+      reporter: [ 'text', 'json', 'html' ]
+    }
+  },
 });
