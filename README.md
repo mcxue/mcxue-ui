@@ -2,7 +2,7 @@
 
 一套轻量级的 React UI 组件库，使用 Vite + TS + React18 开发，体积小，响应快
 
-目前组件还不够丰富，在慢慢开发中
+目前组件还不够丰富，在慢慢开发中，该项目主要用于学习使用，在生产环境推荐使用 [Ant Design](https://ant.design\/index-cn)、[Material UI](https://mui.com/) 这样成熟完备的组件库哈
 
 文档查阅：[https://ui.mcxue.cn](https://ui.mcxue.cn)
 

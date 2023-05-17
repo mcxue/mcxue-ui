@@ -13,7 +13,7 @@ const Home = () => {
         <p>一套轻量级的 React UI 组件库</p>
         <p>使用 Vite + TS + React18 开发，体积小，响应快</p>
         <div className={style.buttonWrapper}>
-          <Link to="/start/install">
+          <Link to="/components/start">
             <Button className={style.button} type="plain">快速上手</Button>
           </Link>
           <Link target="_blank" to="https://github.com/mcxue/mcxue-ui">

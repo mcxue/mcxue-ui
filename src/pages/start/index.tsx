@@ -16,13 +16,16 @@ hljs.registerLanguage('bash', (hljs) => {
 hljs.registerLanguage('typescript', typescript);
 hljs.registerLanguage('xml', xml);
 
-export default function Install() {
+export default function Start() {
   useLayoutEffect(() => {
     hljs.highlightAll();
   }, []);
+
   return (
     <div>
       <Title title="起步" />
+      <SubTitle title="前言" />
+      <p className={style.paragraph}>目前组件还不够丰富，在慢慢开发中，该项目主要用于学习使用，在生产环境推荐使用 <a href="https://ant.design/index-cn" target="_blank">Ant Design</a>、<a href="https://mui.com" target="_blank">Material UI</a> 这样成熟完备的组件库</p>
       <SubTitle title="使用 npm 或 yarn 安装" />
       <p className={style.paragraph}>推荐使用 npm 或 yarn 方式进行安装，方便调试与使用</p>
       <pre>

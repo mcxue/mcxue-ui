@@ -10,11 +10,7 @@ const MENU_ITEMS = [
   },
   {
     label: '组件',
-    key: '/start/components/button',
-  },
-  {
-    label: '更新日志',
-    key: '/start/changeLog',
+    key: '/components/button',
   },
 ];
 
@@ -22,12 +18,10 @@ export default function CommonMenu() {
   const navigate = useNavigate();
   const { pathname } = useLocation();
   const getSelectedKeys = useCallback((s: string) => {
-    if (s === '/') {
-      return '/';
-    } else if (s === '/start/changeLog') {
-      return '/start/changeLog';
+    if (/\/components/.test(s)) {
+      return '/components/button';
     } else {
-      return '/start/components/button';
+      return s;
     }
   }, []);
   const selectedKeys = useMemo(() => getSelectedKeys(pathname), [pathname]);

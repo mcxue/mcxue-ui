@@ -12,11 +12,11 @@ const MENU_ITEMS: MenuProps['items'] = [
     children: [
       {
         label: '起步',
-        key: '/start/install',
+        key: '/components/start',
       },
       {
         label: '更新日志',
-        key: '/start/changeLog',
+        key: '/components/changeLog',
       },
     ],
   },
@@ -26,23 +26,23 @@ const MENU_ITEMS: MenuProps['items'] = [
     children: [
       {
         label: 'Button 按钮',
-        key: '/start/components/button',
+        key: '/components/button',
       },
       {
         label: 'Switch 开关',
-        key: '/start/components/switch',
+        key: '/components/switch',
       },
       {
         label: 'Space 间距',
-        key: '/start/components/space',
+        key: '/components/space',
       },
       {
         label: 'Icon 图标',
-        key: '/start/components/icon',
+        key: '/components/icon',
       },
       {
         label: 'Portal 传送门',
-        key: '/start/components/portal',
+        key: '/components/portal',
       },
     ],
   },
@@ -52,11 +52,11 @@ const MENU_ITEMS: MenuProps['items'] = [
     children: [
       {
         label: 'Alert 警告提示',
-        key: '/start/components/alert',
+        key: '/components/alert',
       },
       {
         label: 'Message 全局提示',
-        key: '/start/components/message',
+        key: '/components/message',
       },
     ],
   },
@@ -66,11 +66,11 @@ const MENU_ITEMS: MenuProps['items'] = [
     children: [
       {
         label: 'Tooltip 文字提示',
-        key: '/start/components/tooltip',
+        key: '/components/tooltip',
       },
       {
         label: 'Table 表格',
-        key: '/start/components/table',
+        key: '/components/table',
       },
     ],
   },
@@ -80,7 +80,7 @@ const MENU_ITEMS: MenuProps['items'] = [
     children: [
       {
         label: 'Menu 菜单',
-        key: '/start/components/menu',
+        key: '/components/menu',
       },
     ],
   },
@@ -90,10 +90,10 @@ const Nav = () => {
   const navigate = useNavigate();
   const { pathname } = useLocation();
   const getSelectedKeys = useCallback((s: string): string | string[] => {
-    if (['/start/install', '/start/changeLog'].indexOf(s) >= 0) {
+    if (['/components/start', '/components/changeLog'].indexOf(s) >= 0) {
       return `0.${s}`;
-    } else if (/\/start\/components/) {
-      const result = /(\/start\/components\/.*)$/.exec(s);
+    } else {
+      const result = /(\/components\/.*)$/.exec(s);
       let index = 0;
       if (result) {
         for (let i = 1; i < MENU_ITEMS.length; i++) {
@@ -104,8 +104,6 @@ const Nav = () => {
         }
       }
       return result ? `${index}.${result[1]}` : '';
-    } else {
-      return '';
     }
   }, []);
   const selectedKeys = useMemo(() => getSelectedKeys(pathname), [pathname]);

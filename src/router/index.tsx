@@ -4,7 +4,7 @@ import RootLayout from '../components/rootLayout';
 import React from 'react';
 
 const Home = React.lazy(() => import('../pages/home'));
-const Install = React.lazy(() => import('../pages/install'));
+const Start = React.lazy(() => import('../pages/start'));
 const ChangeLog = React.lazy(() => import('../pages/changeLog'));
 const ErrorPage = React.lazy(() => import('../pages/errorPage'));
 
@@ -21,6 +21,7 @@ const getComponentRouteChildren = (): RouteObject[] => {
       element: lazyLoadWithFn(files[key]),
     });
   }
+  console.log(list);
   return list;
 };
 
@@ -35,22 +36,24 @@ const baseRouter: RouteObject[] = [
         element: <Home />,
       },
       {
-        path: 'start',
+        path: 'components',
         element: <DocLayout />,
         children: [
           {
             path: '*',
-            element: <Install />,
+            element: <Start />,
           },
+          ...getComponentRouteChildren(),
           {
             path: 'changeLog',
             element: <ChangeLog />,
           },
-          {
-            path: 'components',
-            children: getComponentRouteChildren(),
-          },
         ],
+      },
+      {
+        path: 'ui-usage',
+        element: <DocLayout />,
+        children: [],
       },
     ],
   },
