@@ -1,5 +1,5 @@
 import { Table, TableColumnType } from 'mcxue-ui';
-import Code from '../code';
+import Code from '../Code';
 
 interface RecordType {
   param: string;

@@ -1,5 +1,5 @@
-import { SubSubTitle, SubTitle } from '../../components/title';
-import ApiTable, { ApiTableProps } from '../../components/apiTable';
+import { SubSubTitle, SubTitle } from '../../components/Title';
+import ApiTable, { ApiTableProps } from '../../components/ApiTable';
 
 export default function Api() {
   const dataSource: ApiTableProps['dataSource'] = [

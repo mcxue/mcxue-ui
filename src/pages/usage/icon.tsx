@@ -1,5 +1,5 @@
-import Title, { SubTitle } from '../../components/title';
-import InstanceView from '../../components/instanceView';
+import Title, { SubTitle } from '../../components/Title';
+import InstanceView from '../../components/InstanceView';
 import Demo from '../../demos/icon/demo';
 import Demo2 from '../../demos/icon/demo2';
 import Demo3 from '../../demos/icon/demo3';
@@ -32,7 +32,7 @@ export default function Usage() {
   return (
     <div>
       <Title title="Icon" caption="图标"
-             description={<div>语义化的矢量图形。使用组件内图标需要引入 js 包，用法看<Link to="/start/install">"起步"</Link>章节</div>} />
+             description={<div>语义化的矢量图形。使用组件内图标需要引入 js 包，用法看<Link to="/components/start">"起步"</Link>章节</div>} />
       <InstanceView
         subTitle="代码演示"
         description="基本使用，使用 name 属性选择图标。"

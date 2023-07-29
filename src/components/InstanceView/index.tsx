@@ -1,5 +1,5 @@
-import { SubTitle } from '../title';
-import CodeView from '../codeView';
+import { SubTitle } from '../Title';
+import CodeView from '../CodeView';
 import React, { ReactElement, ReactNode } from 'react';
 import style from './index.module.scss';
 

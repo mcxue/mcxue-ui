@@ -1,5 +1,5 @@
-import Title from '../../components/title';
-import InstanceView from '../../components/instanceView';
+import Title from '../../components/Title';
+import InstanceView from '../../components/InstanceView';
 import Demo from '../../demos/tooltip/demo';
 import Demo2 from '../../demos/tooltip/demo2';
 import Demo3 from '../../demos/tooltip/demo3';

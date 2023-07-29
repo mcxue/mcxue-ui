@@ -1,0 +1,5 @@
+.uiUsageLayout {
+  display: grid;
+  height: calc(100vh - 80px);
+  grid-template: 1fr / auto 1fr;
+}

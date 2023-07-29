@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import style from './index.module.scss';
-import TailInfo from '../../components/tailInfo';
+import TailInfo from '../../components/TailInfo';
 import { Button } from 'mcxue-ui';
 
 const Home = () => {

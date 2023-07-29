@@ -1,8 +1,8 @@
-import CommonMenu from '../commonMenu';
+import CommonMenu from '../CommonMenu';
 import { Outlet } from 'react-router-dom';
 import React, { Suspense } from 'react';
 import style from './index.module.scss';
-import Loading from '../loading';
+import Loading from '../Loading';
 
 export default React.memo(function RootLayout() {
   return (

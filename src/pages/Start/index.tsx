@@ -1,4 +1,4 @@
-import Title, { SubTitle } from '../../components/title';
+import Title, { SubTitle } from '../../components/Title';
 import React, { useLayoutEffect } from 'react';
 
 import hljs from 'highlight.js/lib/core';
