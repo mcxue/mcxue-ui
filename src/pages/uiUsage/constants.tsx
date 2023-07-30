@@ -2,7 +2,17 @@ import { MenuProps } from 'mcxue-ui';
 
 export const UI_USAGE_MENU_ITEMS: MenuProps['items'] = [
   {
-    label: '常用',
+    label: '练习',
+    type: 'group',
+    children: [
+      {
+        label: 'Table 表格',
+        key: '/ui-usage/table',
+      },
+    ],
+  },
+  {
+    label: '封装',
     type: 'group',
     children: [
       {

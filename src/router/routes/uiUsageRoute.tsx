@@ -1,22 +1,18 @@
 import React from 'react';
 import UiUsageLayout from '../../components/UiUsageLayout';
-import McTable from '../../pages/uiUsage/McTable';
-import McFormItem from '../../pages/uiUsage/McFormItem';
 import { UI_USAGE_MENU_ITEMS } from '../../pages/uiUsage/constants';
+import { ConfigProvider } from 'antd';
+import zhCN from 'antd/locale/zh_CN';
+import uiUsageRouteConfig from '../../pages/uiUsage/routeConfig';
 
 const uiUsageRoute = {
   path: 'ui-usage',
-  element: <UiUsageLayout menuItems={UI_USAGE_MENU_ITEMS} />,
-  children: [
-    {
-      path: 'mc-table',
-      element: <McTable />,
-    },
-    {
-      path: 'mc-form-item',
-      element: <McFormItem />,
-    },
-  ],
+  element: (
+    <ConfigProvider locale={zhCN}>
+      <UiUsageLayout menuItems={UI_USAGE_MENU_ITEMS} />
+    </ConfigProvider>
+  ),
+  children: uiUsageRouteConfig,
 };
 
 export default uiUsageRoute;

@@ -1,5 +1,7 @@
+import { Table } from 'antd';
+
 const McTable = () => {
-  return <div>表格</div>;
+  return <Table />;
 };
 
 export default McTable;

@@ -14,7 +14,7 @@ const MENU_ITEMS = [
   },
   {
     label: <div style={{ width: '120px', textAlign: 'center' }}>Ant Design 练习</div>,
-    key: '/ui-usage/mc-table',
+    key: '/ui-usage/table',
   },
 ];
 
@@ -22,12 +22,10 @@ export default function CommonMenu() {
   const navigate = useNavigate();
   const { pathname } = useLocation();
   const getSelectedKeys = useCallback((s: string) => {
-    console.log("getSelectedKeys");
-    console.log(s);
     if (/\/components/.test(s)) {
       return '/components/button';
     } else if (/\/ui-usage/.test(s)) {
-      return '/ui-usage/mc-table';
+      return '/ui-usage/table';
     } else {
       return s;
     }
