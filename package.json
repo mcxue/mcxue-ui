@@ -51,6 +51,7 @@
     "@types/node": "^18.15.3",
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
+    "@types/react-resizable": "^3.0.4",
     "@vitejs/plugin-react": "^3.1.0",
     "@vitest/coverage-c8": "^0.30.1",
     "@vitest/ui": "^0.30.1",
@@ -67,5 +68,8 @@
     "typescript": "^4.9.3",
     "vite": "^4.1.0",
     "vitest": "^0.30.1"
+  },
+  "dependencies": {
+    "react-resizable": "^3.0.5"
   }
 }
